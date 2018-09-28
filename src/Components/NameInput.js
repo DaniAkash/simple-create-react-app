@@ -4,12 +4,8 @@ import PropTypes from 'prop-types';
 class NameInput extends Component {
 
     static propTypes = {
-        updateName: PropTypes.func.isRequired,
-    }
-
-    constructor() {
-        super();
-
+        onInputChange: PropTypes.func.isRequired,
+        name: PropTypes.string.isRequired,
     }
 
     changeNameInput = e => {

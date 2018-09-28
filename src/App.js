@@ -41,7 +41,7 @@ class App extends Component {
         />
         <AgeInput 
           onInputChange={this.onInputChange} 
-          name={this.state.age}
+          age={parseInt(this.state.age)}
         />
       </div>
     )

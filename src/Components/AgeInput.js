@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const AgeInput = ({age, onInputChange}) => {
 
@@ -11,6 +12,11 @@ const AgeInput = ({age, onInputChange}) => {
             <input value={age} type="number" onChange={changeAge}/>
         </div>
     )
+};
+
+AgeInput.propTypes = {
+    age: PropTypes.number.isRequired,
+    onInputChange: PropTypes.func.isRequired,
 };
 
 export default AgeInput;
