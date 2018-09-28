@@ -16,6 +16,12 @@ class App extends Component {
     // code here...
   }
 
+  updateName = name => {
+    this.setState({
+      name,
+    });
+  }
+
   componentDidMount() {
     
   }
@@ -24,7 +30,7 @@ class App extends Component {
     return (
       <div>
         <Name name={this.state.name}/>
-        <NameInput/>
+        <NameInput updateName={this.updateName} />
       </div>
     )
   }

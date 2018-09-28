@@ -19,6 +19,11 @@ class NameInput extends Component {
     }
 
     render() {
+
+        const onButtonClick = () => {
+            this.props.updateName(this.state.nameInputValue)
+        };
+
         return (
             <div>
                 <input 
@@ -27,7 +32,7 @@ class NameInput extends Component {
                     value={this.state.nameInputValue} 
                     onChange={this.changeNameInput} 
                 />
-                <button>submit</button>
+                <button onClick={onButtonClick}>submit</button>
             </div>
         )
     }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Name = ({name, title, initial}) => {
+const Name = ({name}) => {
     return (
         <h1>{`Hello ${name}!`}</h1>
     )
