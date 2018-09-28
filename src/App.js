@@ -5,6 +5,7 @@ import './App.css';
 import NameInput from './Components/NameInput';
 import Age from './Components/Age';
 import AgeInput from './Components/AgeInput';
+import BlogPosts from './Components/BlogPosts';
 
 class App extends Component {
 
@@ -14,12 +15,26 @@ class App extends Component {
     this.state = {
       name: '',    
       age: 0,
+      blogPosts: [],
     };
 
   }
 
+  getPosts = () => {
+    fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => response.json())
+    .then(data => {
+      this.setState({
+        blogPosts: data,
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    })
+  }
+
   componentDidMount() {
-    
+    this.getPosts();
   }
 
   onInputChange = (type, event) => {
@@ -43,6 +58,7 @@ class App extends Component {
           onInputChange={this.onInputChange} 
           age={parseInt(this.state.age)}
         />
+        <BlogPosts posts={this.state.blogPosts}/>
       </div>
     )
   }
