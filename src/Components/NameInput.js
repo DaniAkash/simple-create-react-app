@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class NameInput extends Component {
+
+    static propTypes = {
+        updateName: PropTypes.func.isRequired,
+    }
 
     constructor() {
         super();
