@@ -3,6 +3,8 @@ import Name from './Components/Name';
 import logo from './logo.svg';
 import './App.css';
 import NameInput from './Components/NameInput';
+import Age from './Components/Age';
+import AgeInput from './Components/AgeInput';
 
 class App extends Component {
 
@@ -10,27 +12,37 @@ class App extends Component {
     super();
 
     this.state = {
-      name: '',
+      name: '',    
+      age: 0,
     };
 
-    // code here...
-  }
-
-  updateName = name => {
-    this.setState({
-      name,
-    });
   }
 
   componentDidMount() {
     
   }
 
+  onInputChange = (type, event) => {
+    const newState = {...this.state};
+    newState[type] = event.target.value;
+    this.setState(newState);
+  }
+
   render() {
     return (
       <div>
+
         <Name name={this.state.name}/>
-        <NameInput updateName={this.updateName} />
+        <Age age={this.state.age}/>
+
+        <NameInput 
+          onInputChange={this.onInputChange} 
+          name={this.state.name} 
+        />
+        <AgeInput 
+          onInputChange={this.onInputChange} 
+          name={this.state.age}
+        />
       </div>
     )
   }
