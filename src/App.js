@@ -1,20 +1,32 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
+import Name from './Components/Name';
 import logo from './logo.svg';
 import './App.css';
+import NameInput from './Components/NameInput';
 
 class App extends Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      name: '',
+    };
+
+    // code here...
+  }
+
+  componentDidMount() {
+    
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <Name name={this.state.name}/>
+        <NameInput/>
       </div>
-    );
+    )
   }
 }
 
